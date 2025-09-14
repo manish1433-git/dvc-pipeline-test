@@ -3,8 +3,11 @@ stages:
     cmd: /opt/miniconda3/envs/jup_env/bin/python src/data/data_ingestion.py
     deps:
     - src/data/data_ingestion.py
+    params:
+    - data_ingestion.test_size
     outs:
     - data/processed
+    
 
   data_preprocessing:
     cmd: /opt/miniconda3/envs/jup_env/bin/python src/data/data_preprocessing.py
@@ -13,6 +16,8 @@ stages:
     - data/processed
     outs:
     - data/preprocessed
+    params:
+    - build_features.max_features
   
   build_features:
     cmd: /opt/miniconda3/envs/jup_env/bin/python src/features/build_features.py
