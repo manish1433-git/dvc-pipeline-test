@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: /opt/miniconda3/envs/jup_env/bin/python src/data/data_ingestion.py
+    deps:
+    - path: src/data/data_ingestion.py
+      hash: md5
+      md5: 6a0e8d99136c27fc340f1cc19918b299
+      size: 856
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: cd56b216430a475b194b705463ff6599.dir
+      size: 1044181
+      nfiles: 2
