@@ -10,5 +10,15 @@ stages:
     cmd: /opt/miniconda3/envs/jup_env/bin/python src/data/data_preprocessing.py
     deps:
     - src/data/data_preprocessing.py
+    - data/processed
     outs:
     - data/preprocessed
+  
+  build_features:
+    cmd: /opt/miniconda3/envs/jup_env/bin/python src/features/build_features.py
+    deps:
+    - src/features/build_features.py
+    - data/preprocessed
+    outs:
+    - data/features
+
