@@ -5,3 +5,10 @@ stages:
     - src/data/data_ingestion.py
     outs:
     - data/processed
+
+  data_preprocessing:
+    cmd: /opt/miniconda3/envs/jup_env/bin/python src/data/data_preprocessing.py
+    deps:
+    - src/data/data_preprocessing.py
+    outs:
+    - data/preprocessed
