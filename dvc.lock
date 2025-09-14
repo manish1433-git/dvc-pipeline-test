@@ -13,3 +13,16 @@ stages:
       md5: dbdf07bbf393cefd4d0e3ecf5c452708.dir
       size: 817597
       nfiles: 2
+  data_preprocessing:
+    cmd: /opt/miniconda3/envs/jup_env/bin/python src/data/data_preprocessing.py
+    deps:
+    - path: src/data/data_preprocessing.py
+      hash: md5
+      md5: 9cb4d6b93341024116be3fb41aebbca9
+      size: 2526
+    outs:
+    - path: data/preprocessed
+      hash: md5
+      md5: 3840fc2e3997ebf73e1d904d55089bd1.dir
+      size: 605486
+      nfiles: 2
