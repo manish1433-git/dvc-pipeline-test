@@ -5,24 +5,24 @@ stages:
     deps:
     - path: src/data/data_ingestion.py
       hash: md5
-      md5: c439ef9ce48646370ae32397d1cc138c
-      size: 972
+      md5: 1e8be4a0a048c558b3cb964073194137
+      size: 2729
     params:
       params.yaml:
-        data_ingestion.test_size: 0.8
+        data_ingestion.test_size: 0.3
     outs:
     - path: data/processed
       hash: md5
-      md5: 75fe837ea20b2424dcfde66b4ce4d8e7.dir
-      size: 1044181
+      md5: a2eac26d7128e381582a42c93be0b98c.dir
+      size: 817597
       nfiles: 2
   data_preprocessing:
     cmd: /opt/miniconda3/envs/jup_env/bin/python src/data/data_preprocessing.py
     deps:
     - path: data/processed
       hash: md5
-      md5: 75fe837ea20b2424dcfde66b4ce4d8e7.dir
-      size: 1044181
+      md5: a2eac26d7128e381582a42c93be0b98c.dir
+      size: 817597
       nfiles: 2
     - path: src/data/data_preprocessing.py
       hash: md5
@@ -30,20 +30,20 @@ stages:
       size: 2526
     params:
       params.yaml:
-        build_features.max_features: 70
+        build_features.max_features: 60
     outs:
     - path: data/preprocessed
       hash: md5
-      md5: 2594b6477f11797ba7d9bb3ae617217f.dir
-      size: 791976
+      md5: 0ac8e7dd15365e8dcc1ab244f9d88b8e.dir
+      size: 790933
       nfiles: 2
   build_features:
     cmd: /opt/miniconda3/envs/jup_env/bin/python src/features/build_features.py
     deps:
     - path: data/preprocessed
       hash: md5
-      md5: 2594b6477f11797ba7d9bb3ae617217f.dir
-      size: 791976
+      md5: 0ac8e7dd15365e8dcc1ab244f9d88b8e.dir
+      size: 790933
       nfiles: 2
     - path: src/features/build_features.py
       hash: md5
@@ -52,6 +52,6 @@ stages:
     outs:
     - path: data/features
       hash: md5
-      md5: 4caefc5c2b5c4f3609183885a4a33d7b.dir
-      size: 2080106
+      md5: cba1019b356c483e32fbf28bf4a5ba55.dir
+      size: 1802943
       nfiles: 2

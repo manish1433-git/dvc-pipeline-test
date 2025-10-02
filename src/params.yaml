@@ -3,4 +3,4 @@ data_ingestion:
 
 
 build_features:
-    max_features: 60
+    max_features: 11
